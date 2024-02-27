@@ -7,7 +7,6 @@ import { NextRequest } from "next/server";
 export async function POST(request: NextRequest) {
   const body = await request.json();
 
-  // Parse and validate the frame message
   let message = await getFrameMessage(body)
   if (!message) {
     return new Response("Invalid message", { status: 400 });
